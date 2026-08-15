@@ -55,10 +55,10 @@ SDL_AppResult SDL_AppIterate(void *appstate){
 		//BorderRender calls SDL_RenderClear
 	if(mouse_down && mouse_up)
 		menu_state = !menu_state;
-		if(!wait){
-			mouse_up = false;
-			mouse_down = false;
-		}
+	if(!wait){
+		mouse_up = false;
+		mouse_down = false;
+	}
 	BorderRender(renderer, menu_state);
 	SDL_RenderPresent(renderer);
 	return SDL_APP_CONTINUE;
