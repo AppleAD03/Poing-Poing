@@ -13,8 +13,8 @@
 //#626d6e water dark grey
 //#c4c4c4 cool dull white
 //#21db91 dull spring green
-#define BORDER_THICKNESS	0.05
-#define BORDER_MENU_THICKNESS	0.1
+#define BORDER_THICKNESS	0.05	//percentage w.r.t window size
+#define BORDER_MENU_THICKNESS	0.1	//precentage w.r.t window size
 #define BORDER_COLOR_R		112
 #define BORDER_COLOR_G		109
 #define BORDER_COLOR_B		100
@@ -25,7 +25,7 @@
 #define ARENA_COLOR_B		209
 #define ARENA_COLOR_A		255
 
-#define BUTTON_PADDING		0.05
+#define BUTTON_SIZE		0.8	//percentage w.r.t menu thickness
 #define BUTTON_COLOR_R		255
 #define BUTTON_COLOR_G		244
 #define BUTTON_COLOR_B		209
