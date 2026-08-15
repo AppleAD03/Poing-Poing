@@ -24,7 +24,7 @@ static void RenderBorder(SDL_Renderer *renderer){
 	SDL_RenderFillRect(renderer, &arena);
 }
 
-static void RenderButton(SDL_Renderer *renderer){
+static void RenderButton(SDL_Renderer *renderer, bool menu_state){
 	SDL_FRect button;
 	float menu_thickness = WINDOW_HEIGHT * BORDER_MENU_THICKNESS;
 	float border_thickness = WINDOW_HEIGHT * BORDER_THICKNESS;
@@ -33,17 +33,38 @@ static void RenderButton(SDL_Renderer *renderer){
 	button.y = WINDOW_HEIGHT - (1/2.0 + BUTTON_SIZE/2.0) * (menu_thickness);
 	button.w = button_thickness;
 	button.h = button_thickness;
+	if(menu_state)
 	SDL_SetRenderDrawColor(
 		 renderer
-		,BUTTON_COLOR_R
-		,BUTTON_COLOR_G
-		,BUTTON_COLOR_B
-		,BUTTON_COLOR_A
+		,BUTTON_PAUSE_COLOR_R
+		,BUTTON_PAUSE_COLOR_G
+		,BUTTON_PAUSE_COLOR_B
+		,BUTTON_PAUSE_COLOR_A
+	);
+	else
+	SDL_SetRenderDrawColor(
+		 renderer
+		,BUTTON_PLAY_COLOR_R
+		,BUTTON_PLAY_COLOR_G
+		,BUTTON_PLAY_COLOR_B
+		,BUTTON_PLAY_COLOR_A
 	);
 	SDL_RenderFillRect(renderer, &button);
 }
 
-void BorderRender(SDL_Renderer *renderer){
+void BorderRender(SDL_Renderer *renderer, bool menu_state){
 	RenderBorder(renderer);
-	RenderButton(renderer);
+	RenderButton(renderer, menu_state);
+}
+
+SDL_FRect BorderGetButton(){
+	SDL_FRect button;
+	float menu_thickness = WINDOW_HEIGHT * BORDER_MENU_THICKNESS;
+	float border_thickness = WINDOW_HEIGHT * BORDER_THICKNESS;
+	float button_thickness = menu_thickness * BUTTON_SIZE;
+	button.x = (WINDOW_WIDTH - button_thickness)/2;
+	button.y = WINDOW_HEIGHT - (1/2.0 + BUTTON_SIZE/2.0) * (menu_thickness);
+	button.w = button_thickness;
+	button.h = button_thickness;
+	return button;
 }

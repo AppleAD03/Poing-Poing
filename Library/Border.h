@@ -13,7 +13,9 @@
 
 #include "../SDL3/SDL.h"
 #include "../config.h"
+#include <stdio.h>
 
-void BorderRender(SDL_Renderer *renderer);
+void BorderRender(SDL_Renderer *renderer, bool menu_state);
+SDL_FRect BorderGetButton();
 
 #endif

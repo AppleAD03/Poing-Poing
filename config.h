@@ -10,6 +10,10 @@
 
 //#fff4d1 peach white
 //#706d64 peach grey
+//#82ff82 light green
+//#ff8282 light red
+
+//#d3ffd1 pastel flush green
 //#626d6e water dark grey
 //#c4c4c4 cool dull white
 //#21db91 dull spring green
@@ -25,10 +29,14 @@
 #define ARENA_COLOR_B		209
 #define ARENA_COLOR_A		255
 
-#define BUTTON_SIZE		0.8	//percentage w.r.t menu thickness
-#define BUTTON_COLOR_R		255
-#define BUTTON_COLOR_G		244
-#define BUTTON_COLOR_B		209
-#define BUTTON_COLOR_A		255
+#define BUTTON_SIZE		0.7	//percentage w.r.t menu thickness
+#define BUTTON_PLAY_COLOR_R		150
+#define BUTTON_PLAY_COLOR_G		255
+#define BUTTON_PLAY_COLOR_B		130
+#define BUTTON_PLAY_COLOR_A		255
+#define BUTTON_PAUSE_COLOR_R		255
+#define BUTTON_PAUSE_COLOR_G		150
+#define BUTTON_PAUSE_COLOR_B		130
+#define BUTTON_PAUSE_COLOR_A		255
 
 #endif
