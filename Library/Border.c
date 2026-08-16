@@ -30,7 +30,7 @@ static void RenderButton(SDL_Renderer *renderer, bool menu_state){
 	float border_thickness = WINDOW_HEIGHT * BORDER_THICKNESS;
 	float button_thickness = menu_thickness * BUTTON_SIZE;
 	button.x = (WINDOW_WIDTH - button_thickness)/2;
-	button.y = WINDOW_HEIGHT - (1/2.0 + BUTTON_SIZE/2.0) * (menu_thickness);
+	button.y = WINDOW_HEIGHT - (1/2.0 + BUTTON_SIZE/2.0) * menu_thickness;
 	button.w = button_thickness;
 	button.h = button_thickness;
 	if(menu_state)

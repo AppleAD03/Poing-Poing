@@ -8,13 +8,19 @@
 
 #include "config.h"
 #include "Library/Border.h"
+#include "Library/Triangle.h"
 
 SDL_Window *window = NULL;
 SDL_Renderer *renderer = NULL;
+
+Triangle tri;
+
 bool menu_state = false;
 bool mouse_down = false;
 bool mouse_up = false;
 bool wait = false;
+
+Uint64 now=0, then=0;
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]){
 	SDL_Init(SDL_INIT_VIDEO);
@@ -26,6 +32,9 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]){
 		,&window
 		,&renderer
 	);
+	TriangleInit(&tri);
+	now = SDL_GetTicks();
+	then = now;
 	return SDL_APP_CONTINUE;
 }
 
@@ -51,7 +60,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event){
 }
 
 SDL_AppResult SDL_AppIterate(void *appstate){
-	SDL_SetRenderDrawColor(renderer, 55, 66, 66, SDL_ALPHA_OPAQUE);
+	now = SDL_GetTicks();
 		//BorderRender calls SDL_RenderClear
 	if(mouse_down && mouse_up)
 		menu_state = !menu_state;
@@ -60,6 +69,8 @@ SDL_AppResult SDL_AppIterate(void *appstate){
 		mouse_down = false;
 	}
 	BorderRender(renderer, menu_state);
+	TriangleUpdate(&tri, &now, &then);
+	TriangleRender(renderer, &tri);
 	SDL_RenderPresent(renderer);
 	return SDL_APP_CONTINUE;
 }

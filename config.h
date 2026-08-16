@@ -30,13 +30,28 @@
 #define ARENA_COLOR_A		255
 
 #define BUTTON_SIZE		0.7	//percentage w.r.t menu thickness
-#define BUTTON_PLAY_COLOR_R		150
-#define BUTTON_PLAY_COLOR_G		255
-#define BUTTON_PLAY_COLOR_B		130
-#define BUTTON_PLAY_COLOR_A		255
-#define BUTTON_PAUSE_COLOR_R		255
-#define BUTTON_PAUSE_COLOR_G		150
-#define BUTTON_PAUSE_COLOR_B		130
-#define BUTTON_PAUSE_COLOR_A		255
+#define BUTTON_PLAY_COLOR_R	150
+#define BUTTON_PLAY_COLOR_G	255
+#define BUTTON_PLAY_COLOR_B	130
+#define BUTTON_PLAY_COLOR_A	255
+#define BUTTON_PAUSE_COLOR_R	255
+#define BUTTON_PAUSE_COLOR_G	150
+#define BUTTON_PAUSE_COLOR_B	130
+#define BUTTON_PAUSE_COLOR_A	255
+
+//#21db91 dull spring green
+#define TRIANGLE_COLOR_R	0.1294
+#define TRIANGLE_COLOR_G	0.8588
+#define TRIANGLE_COLOR_B	0.5686
+#define TRIANGLE_COLOR_A	1.0
+
+#define TRIANGLE_SIZE		0.2	//percentage w.r.t arena_height/2; default size
+#define TRIANGLE_PICK_BOX_SIZE	0.1	//percentage w.r.t aerne_height/2
+#define TRIANGLE_PB_COLOR_R	255
+#define TRIANGLE_PB_COLOR_G	255
+#define TRIANGLE_PB_COLOR_B	255
+#define TRIANGLE_PB_COLOR_A	127
+
+#define CAP			5
 
 #endif
