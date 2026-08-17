@@ -32,6 +32,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]){
 		,&window
 		,&renderer
 	);
+	SDL_SetRenderVSync(renderer, 1);
 	TriangleInit(&tri);
 	now = SDL_GetTicks();
 	then = now;

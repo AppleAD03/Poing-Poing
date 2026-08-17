@@ -52,6 +52,6 @@
 #define TRIANGLE_PB_COLOR_B	255
 #define TRIANGLE_PB_COLOR_A	127
 
-#define CAP			5
+#define CAP			1
 
 #endif

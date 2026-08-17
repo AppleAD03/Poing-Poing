@@ -14,10 +14,12 @@
 #include "../config.h"
 
 typedef struct{
+	SDL_Point p[3];
 	SDL_Vertex v[3];
 	SDL_FPoint centroid;
 	SDL_FPoint linear_vel;
 	float angular_vel;
+	float angle;
 }Triangle;
 
 void TriangleInit(Triangle *tri);
